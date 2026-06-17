@@ -381,12 +381,19 @@ h2 em{font-style:italic;color:var(--gold-bright)}
 
 footer{
   border-top:1px solid var(--hairline);
-  padding:2.6rem clamp(1.2rem,6vw,5rem);
-  display:flex;justify-content:space-between;align-items:center;gap:1.4rem;flex-wrap:wrap;
-  font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ivory-dim);
-  background:rgba(6,15,34,.6);
+  padding:clamp(4rem,9vw,7.5rem) clamp(1.2rem,6vw,5rem) clamp(3rem,6vw,5rem);
+  display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1.7rem;text-align:center;
+  background:radial-gradient(120% 100% at 50% 0%,rgba(18,42,87,.55),rgba(6,15,34,.6));
 }
-footer b{color:var(--gold-bright);font-weight:500}
+.see-you{font-family:var(--serif);font-style:italic;font-weight:340;line-height:1;
+  font-size:clamp(2.6rem,8vw,5.4rem);letter-spacing:normal;text-transform:none;
+  background:var(--gold-grad);background-size:240% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:shimmer 6s linear infinite}
+.see-you span{display:inline-block;animation:wave 2.8s ease-in-out infinite}
+@keyframes wave{0%,100%{transform:translateY(0)}28%{transform:translateY(-.18em)}56%{transform:translateY(0)}}
+.foot-meta{display:flex;flex-direction:column;gap:.6rem;font-size:.74rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--ivory-dim);max-width:60ch}
+.foot-meta b{color:var(--gold-bright);font-weight:500;letter-spacing:.12em}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.2s!important}
 }
@@ -595,8 +602,11 @@ footer b{color:var(--gold-bright);font-weight:500}
 </main>
 
 <footer>
-  <span><b>4th Transplant MindaNOW</b> · Bridging the Gaps</span>
-  <span>DOH CHD XI · Southern Philippines Medical Center</span>
+  <p class="see-you" aria-label="See you there!"><span style="animation-delay:0s">S</span><span style="animation-delay:.05s">e</span><span style="animation-delay:.1s">e</span>&nbsp;<span style="animation-delay:.18s">y</span><span style="animation-delay:.23s">o</span><span style="animation-delay:.28s">u</span>&nbsp;<span style="animation-delay:.36s">t</span><span style="animation-delay:.41s">h</span><span style="animation-delay:.46s">e</span><span style="animation-delay:.51s">r</span><span style="animation-delay:.56s">e</span><span style="animation-delay:.61s">!</span></p>
+  <div class="foot-meta">
+    <span><b>Standardizing Referral Pathways and Strengthening Organ Donation and Transplantation Networks</b></span>
+    <span>DOH CHD XI · Southern Philippines Medical Center</span>
+  </div>
 </footer>
 
 <script>
