@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Program of Activities — 4th Transplant MindaNOW</title>
+<meta name="description" content="Program of Activities — 4th Transplant MindaNOW Conference, July 6, 2026, Apo View Hotel, Davao City.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Albert+Sans:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy-deep:#060F22; --navy:#0B1B3A; --navy-mid:#122A57;
+  --blue-royal:#2B53B8; --blue-soft:#7EA0E8;
+  --gold:#C9A23B; --gold-bright:#F0D284; --gold-deep:#8C6A1D;
+  --ivory:#F4EFE2; --ivory-dim:rgba(244,239,226,.62);
+  --hairline:rgba(201,162,59,.28);
+  --serif:"Fraunces",Georgia,serif; --sans:"Albert Sans",sans-serif;
+  --gold-grad:linear-gradient(115deg,#8C6A1D 0%,#C9A23B 28%,#F6E3A6 50%,#C9A23B 72%,#8C6A1D 100%);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--navy-deep);color:var(--ivory);font-family:var(--sans);font-weight:300;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--gold);color:var(--navy-deep)}
+
+/* ambient morphing field */
+.field{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.blob{position:absolute;filter:blur(70px);opacity:.5;will-change:border-radius,transform}
+.blob-1{width:60vmax;height:60vmax;left:-20vmax;top:-26vmax;background:radial-gradient(circle at 35% 35%,#1E3F8F 0%,#0B1B3A 60%,transparent 75%);animation:morph 26s ease-in-out infinite alternate}
+.blob-2{width:46vmax;height:46vmax;right:-16vmax;top:10vmax;background:radial-gradient(circle at 60% 40%,rgba(201,162,59,.45) 0%,rgba(140,106,29,.16) 55%,transparent 72%);opacity:.38;animation:morph 22s ease-in-out infinite alternate-reverse}
+.blob-3{width:50vmax;height:50vmax;left:20vmax;bottom:-30vmax;background:radial-gradient(circle at 50% 50%,#173468 0%,transparent 70%);animation:morph 30s ease-in-out infinite alternate}
+@keyframes morph{0%{border-radius:42% 58% 63% 37%/55% 38% 62% 45%}33%{border-radius:68% 32% 40% 60%/40% 64% 36% 60%}66%{border-radius:35% 65% 58% 42%/62% 38% 62% 38%}100%{border-radius:55% 45% 35% 65%/45% 60% 40% 55%}}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+main,nav{position:relative;z-index:2}
+
+nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:1rem clamp(1.2rem,4vw,3.4rem);background:rgba(6,15,34,.82);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--hairline)}
+.brand{display:flex;align-items:center;gap:.8rem;text-decoration:none;color:var(--ivory)}
+.brand-ring{width:40px;height:40px;border-radius:50%;flex:none;display:grid;place-items:center;border:1px solid var(--gold);
+  font-family:var(--serif);font-weight:600;font-size:.74rem;color:var(--gold-bright);
+  background:radial-gradient(circle at 30% 25%,rgba(201,162,59,.25),transparent 70%)}
+.brand-text{font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ivory-dim)}
+.brand-text b{display:block;color:var(--ivory);font-weight:500;letter-spacing:.18em}
+.nav-back{font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;text-decoration:none;color:var(--gold-bright);
+  border:1px solid var(--hairline);padding:.7rem 1.3rem;border-radius:99px;transition:all .3s ease}
+.nav-back:hover{border-color:var(--gold);color:var(--ivory)}
+
+/* gate (shown if not registered) */
+.gate{position:fixed;inset:0;z-index:100;display:none;place-items:center;text-align:center;padding:2rem;
+  background:linear-gradient(165deg,rgba(11,27,58,.97),rgba(6,15,34,.99))}
+.gate.show{display:grid}
+.gate-seal{width:90px;height:90px;margin:0 auto 1.6rem;display:grid;place-items:center;border:1.5px solid var(--gold);
+  border-radius:50%;color:var(--gold-bright);background:radial-gradient(circle at 32% 28%,rgba(201,162,59,.3),transparent 70%);
+  animation:sealMorph 7s ease-in-out infinite}
+@keyframes sealMorph{0%,100%{border-radius:50%}50%{border-radius:38% 62% 55% 45%/52% 40% 60% 48%}}
+.gate h2{font-family:var(--serif);font-weight:380;font-size:clamp(1.6rem,4vw,2.3rem);margin-bottom:1rem}
+.gate p{color:var(--ivory-dim);max-width:42ch;line-height:1.7;margin:0 auto 2rem}
+
+.btn-gold{position:relative;display:inline-block;text-decoration:none;color:var(--navy-deep);font-weight:600;
+  font-size:.76rem;letter-spacing:.28em;text-transform:uppercase;padding:1.1rem 2.4rem;border-radius:99px;
+  background:var(--gold-grad);background-size:220% 100%;box-shadow:0 8px 30px rgba(201,162,59,.25);
+  transition:background-position .6s ease,transform .3s ease,border-radius .6s ease}
+.btn-gold:hover{background-position:100% 0;transform:translateY(-3px);border-radius:1.1rem 99px 1.1rem 99px}
+
+/* header */
+.prog-head{padding:clamp(3.4rem,7vw,6rem) clamp(1.2rem,6vw,5rem) clamp(2rem,4vw,3rem);text-align:center}
+.confirmed{display:inline-flex;align-items:center;gap:.6rem;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--gold-bright);border:1px solid var(--hairline);border-radius:99px;padding:.55rem 1.2rem;margin-bottom:2rem;
+  background:rgba(201,162,59,.08)}
+.confirmed svg{width:14px;height:14px}
+.eyebrow{display:inline-flex;align-items:center;gap:.9rem;font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;
+  color:var(--gold-bright);margin-bottom:1.6rem}
+.eyebrow::before,.eyebrow::after{content:"";height:1px;width:2.6rem;background:linear-gradient(90deg,transparent,var(--gold))}
+.eyebrow::after{background:linear-gradient(90deg,var(--gold),transparent)}
+.prog-head h1{font-family:var(--serif);font-weight:340;font-size:clamp(1.8rem,4.4vw,3.3rem);line-height:1.12;
+  letter-spacing:-.01em;max-width:22ch;margin:0 auto}
+.prog-head h1 em{font-style:italic;background:var(--gold-grad);background-size:240% 100%;-webkit-background-clip:text;
+  background-clip:text;color:transparent}
+.prog-sub{margin-top:1.8rem;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ivory-dim)}
+.prog-sub b{color:var(--ivory);font-weight:500}
+.prog-sub .dot{color:var(--gold);margin:0 .7rem}
+
+/* timeline */
+.timeline{max-width:980px;margin:0 auto;padding:1rem clamp(1.2rem,6vw,5rem) clamp(4rem,8vw,7rem)}
+.slot{display:grid;grid-template-columns:140px 1fr;gap:clamp(1rem,3vw,2.4rem);
+  padding:1.5rem 0;border-bottom:1px solid var(--hairline);position:relative;
+  opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.slot.in{opacity:1;transform:none}
+.slot:last-child{border-bottom:none}
+.slot .time{font-family:var(--serif);font-size:1rem;color:var(--gold-bright);font-variant-numeric:tabular-nums;
+  white-space:nowrap;padding-top:.15rem}
+.slot .body .act{font-family:var(--serif);font-weight:430;font-size:clamp(1.05rem,1.8vw,1.3rem);line-height:1.35}
+.slot .body .who{margin-top:.5rem;font-size:.82rem;letter-spacing:.04em;color:var(--ivory-dim)}
+.slot .body .who b{color:var(--blue-soft);font-weight:500}
+/* break/admin rows: quieter */
+.slot.admin .body .act{font-family:var(--sans);font-weight:400;font-size:1rem;color:var(--ivory-dim);text-transform:uppercase;letter-spacing:.14em}
+.slot.meal{background:linear-gradient(90deg,rgba(201,162,59,.07),transparent)}
+.slot.meal .body .act{color:var(--gold-bright)}
+
+footer{border-top:1px solid var(--hairline);padding:2.4rem clamp(1.2rem,6vw,5rem);display:flex;justify-content:space-between;
+  align-items:center;gap:1.2rem;flex-wrap:wrap;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ivory-dim);background:rgba(6,15,34,.6);position:relative;z-index:2}
+footer b{color:var(--gold-bright);font-weight:500}
+@media(max-width:600px){.slot{grid-template-columns:1fr;gap:.4rem}.slot .time{padding-top:0}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.2s!important}}
+</style>
+</head>
+<body>
+
+<div class="field" aria-hidden="true">
+  <div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- registration gate -->
+<div class="gate" id="gate" role="dialog" aria-label="Registration required">
+  <div>
+    <div class="gate-seal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>
+    </div>
+    <h2>This page is for registered guests</h2>
+    <p>The Program of Activities unlocks once you have completed your registration for the 4th Transplant MindaNOW Conference.</p>
+    <a class="btn-gold" href="index.html#register">Register now →</a>
+  </div>
+</div>
+
+<nav>
+  <a class="brand" href="index.html">
+    <span class="brand-ring">TM·4</span>
+    <span class="brand-text"><b>Transplant MindaNOW</b>Program · July 6, 2026</span>
+  </a>
+  <a class="nav-back" href="index.html">← Home</a>
+</nav>
+
+<main id="prog">
+  <header class="prog-head">
+    <span class="confirmed">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>
+      Registration confirmed
+    </span>
+    <div><span class="eyebrow">4th Transplant MindaNOW</span></div>
+    <h1>Standardizing Referral Pathways &amp; Strengthening <em>Organ Donation and Transplantation Networks</em></h1>
+    <p class="prog-sub"><b>Program of Activities</b><span class="dot">·</span>July 6, 2026<span class="dot">·</span>Apo View Hotel, Davao City</p>
+  </header>
+
+  <section class="timeline" id="timeline">
+    <div class="slot admin"><div class="time">7:00 – 8:00 am</div><div class="body"><div class="act">Registration</div></div></div>
+    <div class="slot admin"><div class="time">8:00 – 8:10 am</div><div class="body"><div class="act">Prayer &amp; National Anthem</div></div></div>
+    <div class="slot admin"><div class="time">8:10 – 8:35 am</div><div class="body"><div class="act">Opening Remarks</div></div></div>
+    <div class="slot"><div class="time">8:35 – 9:00 am</div><div class="body"><div class="act">Keynote Address</div><div class="who"><b>Dr. Ronaldo Quintana</b></div></div></div>
+    <div class="slot"><div class="time">9:00 – 10:00 am</div><div class="body"><div class="act">Strengthening the Philippine Deceased Organ Donation System</div><div class="who"><b>Michelle Inacay, RN</b></div></div></div>
+    <div class="slot"><div class="time">10:00 – 11:00 am</div><div class="body"><div class="act">From Transplantation to Long-Term Success: The Role of PhilHealth in Kidney Transplant Care</div><div class="who"><b>Llewellyn Binasoy</b> — PHIC XI Regional Director</div></div></div>
+    <div class="slot"><div class="time">11:00 – 12:00 nn</div><div class="body"><div class="act">Transplant Patient Monitoring: Optimizing Long-Term Outcomes Through Comprehensive Follow-Up Care</div><div class="who"><b>Dr. Clarissa Arsolon</b></div></div></div>
+    <div class="slot meal"><div class="time">12:00 – 1:00 pm</div><div class="body"><div class="act">Lunch Symposium — Lifeport Demonstration</div><div class="who"><b>Dr. Adolfo Parayno</b></div></div></div>
+    <div class="slot"><div class="time">1:00 – 2:00 pm</div><div class="body"><div class="act">Organ Retrieval Surgery: Maximizing the Gift of Life Through Excellence in Procurement</div><div class="who"><b>Dr. Jose Emmanuel Del Fierro</b></div></div></div>
+    <div class="slot"><div class="time">2:00 – 3:00 pm</div><div class="body"><div class="act">Transplant Immunology</div><div class="who"><b>Dr. Jeanette A. Borgonia</b></div></div></div>
+    <div class="slot"><div class="time">3:00 – 4:00 pm</div><div class="body"><div class="act">Time-Critical Collaboration: NKTI Immunology Laboratory &amp; OPO Coordination in Deceased Organ Donation</div><div class="who"><b>Ms. Josephine Simangan</b></div></div></div>
+    <div class="slot"><div class="time">4:00 – 5:00 pm</div><div class="body"><div class="act">Patient-Centered Care: Enhancing Adherence and Quality of Life</div><div class="who"><b>Dr. Aileen Herceda</b></div></div></div>
+    <div class="slot"><div class="time">5:00 – 6:00 pm</div><div class="body"><div class="act">Optimizing Long-Term Graft Survival</div><div class="who"><b>Dr. Fritz Diekmann</b></div></div></div>
+  </section>
+</main>
+
+<footer>
+  <span><b>4th Transplant MindaNOW</b> · Bridging the Gaps</span>
+  <span>DOH CHD XI · Southern Philippines Medical Center</span>
+</footer>
+
+<script>
+/* gate: only registered guests (flag set on successful registration) */
+(() => {
+  let ok = false;
+  try{ ok = localStorage.getItem("tmn_registered") === "1"; }catch(e){ ok = true; }
+  if(!ok) document.getElementById("gate").classList.add("show");
+})();
+
+/* staggered reveal of program slots */
+const io = new IntersectionObserver((es) => es.forEach(e => {
+  if(e.isIntersecting){ e.target.style.transitionDelay = (e.target.dataset.d||0)+"ms"; e.target.classList.add("in"); io.unobserve(e.target); }
+}), {threshold:.12});
+document.querySelectorAll(".slot").forEach((s,i) => { s.dataset.d = (i%6)*60; io.observe(s); });
+</script>
+</body>
+</html>

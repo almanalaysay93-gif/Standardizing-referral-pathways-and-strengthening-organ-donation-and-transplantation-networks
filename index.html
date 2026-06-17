@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>4th Transplant MindaNOW — Bridging the Gaps: From Referral to Recovery</title>
-<meta name="description" content="Official registration — 4th Transplant MindaNOW Conference, July 6–7, 2026, Apo View Hotel, Davao City.">
+<meta name="description" content="Official registration — 4th Transplant MindaNOW Conference, July 6, 2026, Apo View Hotel, Davao City.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Albert+Sans:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
@@ -409,12 +409,12 @@ footer b{color:var(--gold-bright);font-weight:500}
   <header class="hero-banner">
     <video class="banner-img" src="assets/banner.mp4" poster="assets/banner.png"
            autoplay muted playsinline preload="auto"
-           aria-label="4th Transplant MindaNOW — Bridging the Gaps: From Referral to Recovery. July 6 and 7, 2026, Apo View Hotel, Davao City."></video>
+           aria-label="4th Transplant MindaNOW — Bridging the Gaps: From Referral to Recovery. July 6, 2026, Apo View Hotel, Davao City."></video>
   </header>
 
   <!-- TEXT HERO (below banner) -->
   <header class="hero">
-    <span class="kicker">Davao City · July 6–7, 2026</span>
+    <span class="kicker">Davao City · July 6, 2026</span>
     <h1>
       <span class="l1">Bridging</span>
       <span class="l2">the gaps —</span>
@@ -427,7 +427,7 @@ footer b{color:var(--gold-bright);font-weight:500}
     </p>
     <div class="hero-meta">
       <div class="meta-item">Venue<b>Apo View Hotel</b></div>
-      <div class="meta-item">Dates<b>July 6–7, 2026</b></div>
+      <div class="meta-item">Date<b>July 6, 2026</b></div>
       <div class="meta-item">Hosted by<b>DOH CHD XI · SPMC</b></div>
     </div>
     <div class="count" id="count" aria-label="Countdown to the conference">
@@ -463,7 +463,7 @@ footer b{color:var(--gold-bright);font-weight:500}
   <!-- MARQUEE -->
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track" id="mq">
-      <span>Referral <i>·</i> Evaluation <i>·</i> Listing <i>·</i> Donation <i>·</i> Transplant <i>·</i> Recovery <i>·</i> 4th Transplant MindaNOW <i>·</i> Apo View Hotel, Davao City <i>·</i> July 6–7, 2026 <i>·</i> </span>
+      <span>Referral <i>·</i> Evaluation <i>·</i> Listing <i>·</i> Donation <i>·</i> Transplant <i>·</i> Recovery <i>·</i> 4th Transplant MindaNOW <i>·</i> Apo View Hotel, Davao City <i>·</i> July 6, 2026 <i>·</i> </span>
     </div>
   </div>
 
@@ -477,7 +477,7 @@ footer b{color:var(--gold-bright);font-weight:500}
       <div class="card reveal">
         <div class="glyph"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
         <h3>Two days, one mission</h3>
-        <p>July 6–7, 2026. Plenaries, case discussions, and workshops tracing the full journey of the transplant patient — and the gaps we close together.</p>
+        <p>July 6, 2026. A full day of plenaries and expert lectures tracing the complete journey of the transplant patient — and the gaps we close together.</p>
       </div>
       <div class="card reveal">
         <div class="glyph"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
@@ -534,7 +534,7 @@ footer b{color:var(--gold-bright);font-weight:500}
           <div class="form-sect-label">II · Event Logistics &amp; Preferences</div>
           <p class="form-note disclaimer" style="margin-bottom:1.6rem">
             <b>Please note:</b> This is a <b>live-out event</b> — accommodation is not included.
-            The conference is a <b>day-and-a-half activity</b>.
+            The conference is a <b>one-day activity</b> on July 6, 2026.
           </p>
           <p class="form-note" style="margin-bottom:.8rem">RSVP Status *</p>
           <div class="pills" id="rsvpPills" role="radiogroup" aria-label="RSVP Status">
@@ -576,7 +576,8 @@ footer b{color:var(--gold-bright);font-weight:500}
             </div>
             <h3>Your seat is reserved.</h3>
             <p>Thank you — your registration for the <b>4th Transplant MindaNOW Conference</b> has been received.
-            We look forward to welcoming you at the Apo View Hotel, Davao City, on <b>July 6–7, 2026</b>.</p>
+            We look forward to welcoming you at the Apo View Hotel, Davao City, on <b>July 6, 2026</b>.</p>
+            <a class="btn-gold" href="program.html" style="margin-top:2rem">View Program of Activities →</a>
           </div>
         </div>
       </div>
@@ -695,6 +696,7 @@ form.addEventListener("submit", async ev => {
   try{
     await fetch(FORM_ACTION, {method:"POST", mode:"no-cors",
       headers:{"Content-Type":"application/x-www-form-urlencoded"}, body:data.toString()});
+    try{ localStorage.setItem("tmn_registered","1"); }catch(e){}
     successPane.classList.add("show");
     successPane.scrollIntoView({behavior:"smooth", block:"center"});
   }catch(e){
